@@ -124,7 +124,7 @@ const Navbar = () => {
                     align-items: center;
                     justify-content: center;
                     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                    z-index: 999;
+                    z-index: 2000;
                     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
                 }
 

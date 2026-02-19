@@ -5,13 +5,13 @@ import { resumeData } from '../data/resume';
 
 const Hero = () => {
     return (
-        <section id="about" className="container" style={{
+        <section id="about" className="container hero-section" style={{
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
             paddingTop: '60px'
         }}>
-            <div style={{
+            <div className="hero-content" style={{
                 display: 'grid',
                 gridTemplateColumns: 'minmax(300px, 1fr) minmax(300px, 1fr)',
                 gap: '4rem',
@@ -23,6 +23,7 @@ const Hero = () => {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
+                    className="hero-text"
                 >
                     <h2 style={{ color: 'var(--accent-primary)', marginBottom: '1rem', fontFamily: 'var(--font-mono)' }}>
                         Hello, I am
@@ -37,7 +38,7 @@ const Hero = () => {
                         {resumeData.personalInfo.objective}
                     </p>
 
-                    <div style={{ display: 'flex', gap: '1rem' }}>
+                    <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
                         <a href={resumeData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                             <Github size={20} /> GitHub
                         </a>
@@ -49,9 +50,28 @@ const Hero = () => {
 
                 {/* Right Content - Terminal Visual */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="terminal-card"
+                    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                    animate={{
+                        opacity: 1,
+                        scale: 1,
+                        y: [0, -15, 0], // Floating animation
+                    }}
+                    transition={{
+                        opacity: { duration: 0.8, delay: 0.2 },
+                        scale: { duration: 0.8, delay: 0.2 },
+                        y: {
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }
+                    }}
+                    whileHover={{
+                        rotateY: 5,
+                        rotateX: -5,
+                        scale: 1.02,
+                        boxShadow: '0 25px 50px -12px rgba(0, 243, 255, 0.2)'
+                    }}
                     style={{
                         background: 'var(--bg-card)',
                         padding: '1.5rem',
@@ -59,7 +79,9 @@ const Hero = () => {
                         border: '1px solid rgba(0, 243, 255, 0.1)',
                         boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
                         backdropFilter: 'blur(10px)',
-                        fontFamily: 'var(--font-mono)'
+                        fontFamily: 'var(--font-mono)',
+                        perspective: '1000px',
+                        transformStyle: 'preserve-3d'
                     }}
                 >
                     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(148, 163, 184, 0.1)' }}>
@@ -75,7 +97,7 @@ const Hero = () => {
                             <span style={{ color: 'var(--text-primary)' }}>neofetch</span>
                         </p>
                         <br />
-                        <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '2rem', alignItems: 'start' }}>
+                        <div className="terminal-content" style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '2rem', alignItems: 'start' }}>
                             <div style={{
                                 color: 'var(--accent-primary)',
                                 display: 'flex',
@@ -113,13 +135,34 @@ const Hero = () => {
             .blinking-cursor {
                 animation: blink 1s step-end infinite;
             }
+            
+            /* Responsive Styles */
             @media (max-width: 768px) {
-                div[style*="grid-template-columns"] {
+                .hero-content {
                     grid-template-columns: 1fr !important;
                     text-align: center;
+                    gap: 3rem !important;
                 }
-                div[style*="display: flex"] {
+                
+                .hero-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .social-links {
                     justify-content: center;
+                }
+
+                .terminal-card {
+                    margin: 0 -1rem; /* Full width on very small screens */
+                }
+
+                /* Override specific grid layout for mobile inside terminal */
+                .terminal-content {
+                    grid-template-columns: 1fr !important;
+                    gap: 1rem !important;
+                    text-align: left;
                 }
             }
         `}
