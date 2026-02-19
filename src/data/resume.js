@@ -34,19 +34,19 @@ export const resumeData = {
     {
       title: "MoneyMap - Smart Budget Planner",
       tech: ["React.js", "Node.js", "MongoDB", "Tailwind CSS"],
-      description: "A web-based application that helps users manage income, expenses, and budgets efficiently. Follows a structured full-stack architecture with Git-based version control.",
+      description: "The MoneyMap – Smart Budget Planner is a web-based application that helps users manage income, expenses, and budgets efficiently. It allows users to track transactions, categorize spending, and gain insights into their financial habits. The system follows a structured full-stack architecture with Git-based version control, focusing on maintainability and deployment readiness. Overall, the project provides a practical and user-friendly solution for effective personal finance management. ",
       link: "https://github.com/Kaushall12/Moneymap-Smart-Budget-Planner"
     },
     {
       title: "Warehouse Management System",
       tech: ["HTML", "CSS", "PHP", "MySQL"],
-      description: "Streamlines warehouse operations, enabling Admins, Warehouse Owners, and Customers to manage listings and rentals securely.",
+      description: "The Warehouse Management System is a web-based application designed to streamline and manage warehouse operations efficiently. It enables different users to interact with the system, including Admin, Warehouse Owners, and Warehouse Customers who rent warehouses. The system provides secure login and registration with proper session/state management. It ensures smooth handling of warehouse listings, customer requests, and rental management in a structured way. Source code was managed using GitHub to ensure proper version control and structured development workflow. ",
       link: "https://github.com/Kaushall12/Warehouse-Management-System"
     },
     {
       title: "Household Service Provider System",
       tech: ["HTML", "CSS", ".NET MVC", "SQL Server"],
-      description: "Connects customers with service providers for plumbing, electrical work, etc. Built using MVC architecture for clean separation of concerns.",
+      description: "The Household Service Provider System is a web-based application designed to connect customers with service providers for various household needs such as plumbing, electrical work, cleaning, carpentry, and more. The system allows users to register, search, and book services, while service providers can manage their profiles and service requests. The system is built using the MVC architecture, ensuring clean separation of concerns and maintainability.",
       link: "https://github.com/Kaushall12/Service-Provider-System"
     }
   ],
