@@ -28,12 +28,14 @@ function App() {
   return (
     <div className="App">
       <ThreeBackground />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 }

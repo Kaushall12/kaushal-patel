@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sparkles, RandomizedLight } from '@react-three/drei';
+import { Sparkles } from '@react-three/drei';
 
 const ParticleNetwork = () => {
     // Using Sparkles from zwei/drei - guaranteed to work and highly optimized
@@ -39,7 +39,7 @@ const ThreeBackground = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            zIndex: -1,
+            zIndex: 0,
             pointerEvents: 'none',
             background: 'transparent'
         }}>
