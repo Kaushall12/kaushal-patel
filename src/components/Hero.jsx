@@ -34,7 +34,7 @@ const Hero = () => {
                     <h3 style={{ fontSize: '1.75rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: '600' }}>
                         {resumeData.personalInfo.title}
                     </h3>
-                    <p style={{ maxWidth: '500px', marginBottom: '2rem', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.6' }}>
+                    <p style={{ maxWidth: '500px', marginBottom: '2rem', color: 'var(--text-primary)', fontSize: '1.1rem', lineHeight: '1.6', fontWeight: '500' }}>
                         {resumeData.personalInfo.objective}
                     </p>
 
